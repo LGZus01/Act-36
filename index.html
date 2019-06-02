@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+	<meta content="application-name" content="Actividad 36">
+	<meta name="description" content="Fomularios">
+	<meta name="keywords" content="Formularios">
+	<meta name="author" content="JGG, lgzus01@protonmail.com">
+	<meta name="copyright" content="LGZús~CONALEP 153">
+	<title>Formularios</title>
+	<script type="text/javascript">
+		function cambiaFondo(x){
+			console.log(x.value);
+
+			var body = document.getElementById("body");
+			body.style.backgroundColor = x.value;
+		}
+	</script>
+	<script type="text/javascript">
+		function cambiaFondo(x){
+			console.log(x.value);
+
+			var body = document.getElementById("body");
+			body.style.backgroundColor = x.value;
+		}
+	</script>
+
+<script>
+  addEventListener('load',inicio,false);
+
+  function inicio()
+  {
+    document.getElementById('temperatura').addEventListener('change',cambioTemperatura,false);
+  }
+
+  function cambioTemperatura()
+  {    
+    document.getElementById('temp').innerHTML=document.getElementById('temperatura').value;
+  }
+</script>  
+
+</head>
+<body id="body">
+	<header>
+		<center>
+			<h3>Llena el formulario</h3>
+		</center>
+	</header>
+	<section>
+		<form name="registro" id="formregis" method="get" autocomplete="off">
+			<br>
+			Nombre:&nbsp;<input type="text" name="nombre" id="texto1">
+			<br>
+			<br>
+			Apellido Paterno:&nbsp;<input type="text" name="apellidoP" id="texto2">
+			<br>
+			<br>
+			Apellido Materno:&nbsp;<input type="text" name="apellidoM" id="texto3">
+			<br>
+			<datalist id="genero">
+				<option value="Masculino" ></option>
+				<option value="Femenino" ></option>
+			</datalist>
+			<br>
+			Género:&nbsp;<input type="text" name="genero" id="genero" list="genero">
+			<br>
+			<br>
+			Edad:&nbsp;<input type="range" name="rangos" id="temperatura" min="10" max="100">
+      		<span id="temp">0</span>
+			<br>
+			<br>
+			Color de fondo:&nbsp;<input type="Color" name="colores" onchange="cambiaFondo(this)">
+			<br>
+			<br>
+			<input type="button" value="Confirmar" onClick="mostrar()"> 
+				<script language="JavaScript"> 
+					function mostrar() { 
+						var nom=document.registro.nombre.value; var apelli=document.registro.apellidoP.value; var apelli2=document.registro.apellidoM.value;
+						var gen=document.registro.genero.value; var edad=document.registro.rangos.value; 
+						var color=document.registro.colores.value;
+						alert('Su Nombre Es: ' + nom +'\nSu Apellido Paterno: ' + apelli + '\n Su Apellido Materno:' + apelli2 + '\nSu Género Es: ' + gen + '\nSu Edad Es: ' + edad +'\nEl Color Elegido Es: ' + color);
+					} 
+				</script>
+		</form>
+	</section>
+</body>
+<footer id="pie">
+	<small>Derechos Reservados &copy LGZús 2018-2019</small>
+</footer>
+</html>
